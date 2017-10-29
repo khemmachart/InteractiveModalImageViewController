@@ -39,7 +39,7 @@ class InteractiveModalImageViewController: UIViewController {
         }
         return CGRect.zero
     }()
-    
+
     private let duration: TimeInterval = 0.25
     
     var sender: UIView?
@@ -93,7 +93,31 @@ class InteractiveModalImageViewController: UIViewController {
         })
     }
     
+    private func dismissAnimation(completionHandler handler: (() -> Void)? = nil) {
+        UIView.animate(withDuration: duration * 2,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.75,
+                       initialSpringVelocity: 1,
+                       options: [.curveEaseInOut],
+                       animations: {
+                        self.setupInterfaceForPresentAnimation()
+        }, completion: { complete in
+            handler?()
+        })
+    }
+    
     // MARK: - Utils
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        if flag {
+            dismissAnimation(completionHandler: {
+                super.dismiss(animated: false, completion: completion)
+            })
+        } else {
+            super.dismiss(animated: false, completion: completion)
+        }
+        
+    }
     
     private enum OverlayViewAlpha: CGFloat {
         case begin = 0
