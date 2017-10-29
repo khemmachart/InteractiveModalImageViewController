@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EA251A941FA5F3F4002DA525 /* UIView+Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA251A831FA5F38D002DA525 /* UIView+Origin.swift */; };
-		EA251A951FA5F3FA002DA525 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA251A851FA5F38D002DA525 /* SampleTableViewCell.swift */; };
 		EA251A961FA5F3FD002DA525 /* InteractiveModalImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA251A871FA5F38D002DA525 /* InteractiveModalImageViewController.swift */; };
 		EA251A971FA5F3FD002DA525 /* SampleButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA251A881FA5F38D002DA525 /* SampleButtonViewController.swift */; };
-		EA251A981FA5F3FD002DA525 /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA251A891FA5F38D002DA525 /* SampleTableViewController.swift */; };
 		EA251A991FA5F406002DA525 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA251A8B1FA5F38D002DA525 /* Assets.xcassets */; };
 		EA251A9A1FA5F40B002DA525 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA251A8C1FA5F38D002DA525 /* LaunchScreen.storyboard */; };
 		EA251A9B1FA5F40F002DA525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA251A8E1FA5F38D002DA525 /* Main.storyboard */; };
@@ -23,10 +21,8 @@
 /* Begin PBXFileReference section */
 		EA251A5D1FA5F323002DA525 /* InteractiveModalImageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveModalImageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA251A831FA5F38D002DA525 /* UIView+Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Origin.swift"; sourceTree = "<group>"; };
-		EA251A851FA5F38D002DA525 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
 		EA251A871FA5F38D002DA525 /* InteractiveModalImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveModalImageViewController.swift; sourceTree = "<group>"; };
 		EA251A881FA5F38D002DA525 /* SampleButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleButtonViewController.swift; sourceTree = "<group>"; };
-		EA251A891FA5F38D002DA525 /* SampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
 		EA251A8B1FA5F38D002DA525 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA251A8D1FA5F38D002DA525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA251A8F1FA5F38D002DA525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				EA251A821FA5F38D002DA525 /* Extension */,
-				EA251A841FA5F38D002DA525 /* View */,
 				EA251A861FA5F38D002DA525 /* ViewController */,
 			);
 			path = Classes;
@@ -90,20 +85,11 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		EA251A841FA5F38D002DA525 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EA251A851FA5F38D002DA525 /* SampleTableViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		EA251A861FA5F38D002DA525 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				EA251A871FA5F38D002DA525 /* InteractiveModalImageViewController.swift */,
 				EA251A881FA5F38D002DA525 /* SampleButtonViewController.swift */,
-				EA251A891FA5F38D002DA525 /* SampleTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -203,11 +189,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA251A9C1FA5F414002DA525 /* AppDelegate.swift in Sources */,
-				EA251A981FA5F3FD002DA525 /* SampleTableViewController.swift in Sources */,
 				EA251A971FA5F3FD002DA525 /* SampleButtonViewController.swift in Sources */,
 				EA251A941FA5F3F4002DA525 /* UIView+Origin.swift in Sources */,
 				EA251A961FA5F3FD002DA525 /* InteractiveModalImageViewController.swift in Sources */,
-				EA251A951FA5F3FA002DA525 /* SampleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
