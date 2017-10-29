@@ -44,6 +44,10 @@ class InteractiveModalImageViewController: UIViewController {
     private let dragingDismissDistance: CGFloat = 80
     private let duration: TimeInterval = 0.25
     
+    var presentHandler: (() -> Void)? = nil
+    var dismissHandler: (() -> Void)? = nil
+    
+    var superview: UIView?
     var sender: UIView?
     var image: UIImage?
     
@@ -106,11 +110,15 @@ class InteractiveModalImageViewController: UIViewController {
     private func setupInterfaceForPresentAnimation() {
         overlayView.alpha = OverlayViewAlpha.begin.rawValue
         displayImageView.frame = senderFrame
+        dismissButton.isHidden = true
+        superview?.transform = CGAffineTransform(scaleX: 1, y: 1)
     }
     
     private func setupInterfaceForDismissAnimation() {
         overlayView.alpha = OverlayViewAlpha.done.rawValue
         displayImageView.frame = actualFrame
+        dismissButton.isHidden = false
+        superview?.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
     }
     
     private func setupInterfaceForDismissAnimationPreparation() {
@@ -123,6 +131,7 @@ class InteractiveModalImageViewController: UIViewController {
     // MARK: - Animation
     
     private func animatePresentAnimation() {
+        presentHandler?()
         setupInterfaceForPresentAnimation()
         presentAnimation()
     }
@@ -142,6 +151,7 @@ class InteractiveModalImageViewController: UIViewController {
                        animations: {
                         self.setupInterfaceForPresentAnimation()
         }, completion: { complete in
+            self.dismissHandler?()
             handler?()
         })
     }
