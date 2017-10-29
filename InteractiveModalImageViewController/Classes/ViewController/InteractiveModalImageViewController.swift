@@ -116,7 +116,7 @@ class InteractiveModalImageViewController: UIViewController {
     }
     
     private func setupInterfaceForDismissAnimation() {
-        overlayView.alpha = OverlayViewAlpha.finish.rawValue
+        overlayView.alpha = OverlayViewAlpha.done.rawValue
         displayImageView.frame = actualFrame
         dismissButton.isHidden = false
         superview?.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
@@ -179,6 +179,6 @@ class InteractiveModalImageViewController: UIViewController {
     private enum OverlayViewAlpha: CGFloat {
         case begin = 0
         case prepare = 0.75
-        case finish = 1
+        case done = 1
     }
 }
