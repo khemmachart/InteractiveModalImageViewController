@@ -18,6 +18,7 @@
 		EA251A9C1FA5F414002DA525 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA251A911FA5F38D002DA525 /* AppDelegate.swift */; };
 		EA251A9D1FA5F414002DA525 /* DSCF0855.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA251A921FA5F38D002DA525 /* DSCF0855.jpg */; };
 		EA251A9E1FA5F414002DA525 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA251A931FA5F38D002DA525 /* Info.plist */; };
+		EAEEBC091FA635DC00B18A08 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEBC081FA635DC00B18A08 /* LandingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		EA251A911FA5F38D002DA525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA251A921FA5F38D002DA525 /* DSCF0855.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSCF0855.jpg; sourceTree = "<group>"; };
 		EA251A931FA5F38D002DA525 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAEEBC081FA635DC00B18A08 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				EA251A871FA5F38D002DA525 /* InteractiveModalImageViewController.swift */,
 				EA251A881FA5F38D002DA525 /* SampleButtonViewController.swift */,
 				EA251A891FA5F38D002DA525 /* SampleTableViewController.swift */,
+				EAEEBC081FA635DC00B18A08 /* LandingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA251A9C1FA5F414002DA525 /* AppDelegate.swift in Sources */,
+				EAEEBC091FA635DC00B18A08 /* LandingViewController.swift in Sources */,
 				EA251A981FA5F3FD002DA525 /* SampleTableViewController.swift in Sources */,
 				EA251A971FA5F3FD002DA525 /* SampleButtonViewController.swift in Sources */,
 				EA251A941FA5F3F4002DA525 /* UIView+Origin.swift in Sources */,
