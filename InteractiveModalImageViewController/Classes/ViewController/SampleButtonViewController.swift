@@ -25,6 +25,7 @@ class SampleButtonViewController: UIViewController {
         let stroyboard = UIStoryboard(name: "Main", bundle: nil)
         let sID = "InteractiveModalImageViewController"
         if let viewController = stroyboard.instantiateViewController(withIdentifier: sID) as? InteractiveModalImageViewController {
+            viewController.sender = sender
             viewController.image = sender?.image
             present(viewController, animated: false, completion: nil)
         }
