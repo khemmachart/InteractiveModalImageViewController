@@ -39,7 +39,9 @@ class InteractiveModalImageViewController: UIViewController {
         }
         return CGRect.zero
     }()
-
+    
+    private var initialTouchPoint = CGPoint(x: 0,y: 0)
+    private let dragingDismissDistance: CGFloat = 80
     private let duration: TimeInterval = 0.25
     
     var sender: UIView?
@@ -63,6 +65,37 @@ class InteractiveModalImageViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction private func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+        let touchPoint = sender.location(in: self.view?.window)
+        
+        switch sender.state {
+            
+        case .began:
+            initialTouchPoint = touchPoint
+            
+        case .changed:
+            if overlayView.alpha > OverlayViewAlpha.prepare.rawValue {
+                setupInterfaceForDismissAnimationPreparation()
+            }
+            let yPosition = touchPoint.y - initialTouchPoint.y
+            let xPosition = touchPoint.x - initialTouchPoint.x
+            displayImageView.frame = CGRect(x: xPosition,
+                                            y: yPosition,
+                                            width: view.bounds.width,
+                                            height: view.bounds.height)
+            
+        case .ended, .cancelled:
+            if isReachedDismissPosition(curPosition: touchPoint) {
+                dismiss(animated: true)
+            } else {
+                presentAnimation()
+            }
+            
+        default:
+            break
+        }
+    }
+    
     // MARK: - Interface
     
     private func setupInterface() {
@@ -78,6 +111,13 @@ class InteractiveModalImageViewController: UIViewController {
     private func setupInterfaceForDismissAnimation() {
         overlayView.alpha = OverlayViewAlpha.done.rawValue
         displayImageView.frame = actualFrame
+    }
+    
+    private func setupInterfaceForDismissAnimationPreparation() {
+        UIView.animate(withDuration: duration, animations: {
+            self.dismissButton.isHidden = true
+            self.overlayView.alpha = OverlayViewAlpha.prepare.rawValue
+        })
     }
     
     // MARK: - Animation
@@ -107,6 +147,12 @@ class InteractiveModalImageViewController: UIViewController {
     }
     
     // MARK: - Utils
+    
+    private func isReachedDismissPosition(curPosition: CGPoint) -> Bool {
+        let isOverYPosition = abs(curPosition.y - initialTouchPoint.y) > dragingDismissDistance
+        let isOverXPosition = abs(curPosition.x - initialTouchPoint.x) > dragingDismissDistance
+        return isOverYPosition || isOverXPosition
+    }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         if flag {
